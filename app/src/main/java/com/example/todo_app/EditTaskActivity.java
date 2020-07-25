@@ -25,7 +25,7 @@ public class EditTaskActivity extends AppCompatActivity {
     EditText titleDoes, dateDoes;
     TextInputEditText descDoes;
     Button btnUpdate, btnDelete;
-    DatabaseReference reference;
+//    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +42,11 @@ public class EditTaskActivity extends AppCompatActivity {
         dateDoes.setText(getIntent().getStringExtra("datedoes"));
 
         final String keykeyDoes = getIntent().getStringExtra("keydoes");
-
-        reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").
-                child("Task" + keykeyDoes);
-
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reference.addValueEventListener(new ValueEventListener() {
+                final DatabaseReference reference =FirebaseDatabase.getInstance().getReference().child("DoesApp").child("Task" +keykeyDoes);
+                reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         dataSnapshot.getRef().child("titledoes").setValue(titleDoes.getText().toString());
@@ -57,6 +54,9 @@ public class EditTaskActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("datedoes").setValue(dateDoes.getText().toString());
                         dataSnapshot.getRef().child("keydoes").setValue(keykeyDoes);
                         Intent a = new Intent(EditTaskActivity.this, MainActivity.class);
+                        //a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        //a.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(a);
                     }
 
@@ -67,6 +67,24 @@ public class EditTaskActivity extends AppCompatActivity {
                 });
             }
         });
-
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final DatabaseReference reference1 =FirebaseDatabase.getInstance().getReference().child("DoesApp").child("Task"+keykeyDoes);
+                reference1.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Intent a = new Intent(EditTaskActivity.this, MainActivity.class);
+                            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            Toast.makeText(getApplicationContext(), "Deleted!", Toast.LENGTH_SHORT).show();
+                            startActivity(a);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Failure!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
     }
 }
