@@ -1,13 +1,28 @@
 package com.example.todo_app;
 
 public class MyDoes {
-    String titledoes, datedoes, descdoes;
+    String titledoes, datedoes, descdoes, keydoes;
+
+    public String getKeydoes() {
+        return keydoes;
+    }
+
+    public void setKeydoes(String keydoes) {
+        this.keydoes = keydoes;
+    }
 
     public MyDoes() {
     }
 
     public MyDoes(String titledoes) {
         this.titledoes = titledoes;
+    }
+
+    public MyDoes(String titledoes, String datedoes, String descdoes, String keydoes) {
+        this.titledoes = titledoes;
+        this.datedoes = datedoes;
+        this.descdoes = descdoes;
+        this.keydoes = keydoes;
     }
 
     public MyDoes(String titledoes, String datedoes, String descdoes) {

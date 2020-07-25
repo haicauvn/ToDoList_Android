@@ -1,6 +1,7 @@
 package com.example.todo_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,23 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder> 
         myViewHolder.titledoes.setText(myDoes.get(i).getTitledoes());
         myViewHolder.descdoes.setText(myDoes.get(i).getDescdoes());
         myViewHolder.datedoes.setText(myDoes.get(i).getDatedoes());
+
+        final String getTitleDoes = myDoes.get(i).getTitledoes();
+        final String getDescDoes = myDoes.get(i).getDescdoes();
+        final String getDateDoes = myDoes.get(i).getDatedoes();
+        final String getKeyDoes = myDoes.get(i).getKeydoes();
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I = new Intent(context, EditTaskActivity.class);
+                I.putExtra("titledoes", getTitleDoes);
+                I.putExtra("descdoes", getDescDoes);
+                I.putExtra("datedoes", getDateDoes);
+                I.putExtra("keydoes", getKeyDoes);
+                context.startActivity(I);
+            }
+        });
     }
 
     @Override

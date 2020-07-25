@@ -121,10 +121,10 @@
         android:orientation="horizontal"
         android:gravity="center">
         <Button
-            android:id="@+id/btnCancel"
+            android:id="@+id/btnDelete"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            android:text="Cancel"
+            android:text="Delete"
             android:textColor="#afafaf"
             android:textAllCaps="false"
             android:textSize="22sp"
@@ -132,10 +132,10 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp" />
         <Button
-            android:id="@+id/btnSaveTask"
+            android:id="@+id/btnUpdate"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            android:text="Add"
+            android:text="Update"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:textSize="22sp"
@@ -146,24 +146,3 @@
 
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--end-->
