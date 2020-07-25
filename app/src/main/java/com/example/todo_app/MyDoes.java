@@ -1,0 +1,56 @@
+package com.example.todo_app;
+
+public class MyDoes {
+    String titledoes, datedoes, descdoes;
+
+    public MyDoes() {
+    }
+
+    public MyDoes(String titledoes) {
+        this.titledoes = titledoes;
+    }
+
+    public MyDoes(String titledoes, String datedoes, String descdoes) {
+        this.titledoes = titledoes;
+        this.datedoes = datedoes;
+        this.descdoes = descdoes;
+    }
+
+    public MyDoes(String titledoes, String datedoes) {
+        this.titledoes = titledoes;
+        this.datedoes = datedoes;
+    }
+
+    public String getTitledoes() {
+        return titledoes;
+    }
+
+    public void setTitledoes(String titledoes) {
+        this.titledoes = titledoes;
+    }
+
+    public String getDatedoes() {
+        return datedoes;
+    }
+
+    public void setDatedoes(String datedoes) {
+        this.datedoes = datedoes;
+    }
+
+    public String getDescdoes() {
+        return descdoes;
+    }
+
+    public void setDescdoes(String descdoes) {
+        this.descdoes = descdoes;
+    }
+
+    @Override
+    public String toString() {
+        return "MyDoes{" +
+                "titledoes='" + titledoes + '\'' +
+                ", datedoes='" + datedoes + '\'' +
+                ", descdoes='" + descdoes + '\'' +
+                '}';
+    }
+}
