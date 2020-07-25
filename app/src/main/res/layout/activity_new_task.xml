@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f4f4f4"
+    tools:context=".NewTaskActivity">
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgcard"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/addtitle"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Title"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/titleDoes"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:inputType="text"
+                android:paddingLeft="12dp"
+                android:textColorHint="#b5b5b5"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/bginputtask"
+                android:hint="What will you do?" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/addDesc"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Description"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:textColorHint="#b5b5b5"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descDoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="@drawable/bginputtask"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/descDoes"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingLeft="12dp"-->
+<!--                android:textColorHint="#b5b5b5"-->
+<!--                android:maxLength="35"-->
+<!--                android:textColor="@color/colorPrimaryDark"-->
+<!--                android:background="@drawable/bginputtask"-->
+<!--                android:hint="How To?" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/adddate"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Due"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/dateDoes"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:inputType="text"
+                android:paddingLeft="12dp"
+                android:textColorHint="#b5b5b5"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/bginputtask"
+                android:hint="When will?" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Cancel"
+            android:textColor="#afafaf"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:background="@drawable/bgbtncancel"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp" />
+        <Button
+            android:id="@+id/btnSaveTask"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Add"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:background="@drawable/bgbtncreate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--end-->
